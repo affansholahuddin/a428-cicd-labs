@@ -18,6 +18,7 @@
             }
             stage('Deploy') {
                 steps {
+                    input message: 'Lanjutkan ke tahap Deploy? (Klik "Proceed" untuk melanjutkan eksekusi)'
                     sh './jenkins/scripts/deliver.sh'
                     sleep(time: 1, unit: 'MINUTES')
                     sh './jenkins/scripts/kill.sh'
